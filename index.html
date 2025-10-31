@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Igor Santana Advocacia</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN (mobile-first) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#4f0000'
+          }
+        },
+        fontFamily: {
+          sans: ['Inter','ui-sans-serif','system-ui','-apple-system','Segoe UI','Roboto','Helvetica','Arial'],
+          display: ['Poppins','Inter']
+        }
+      }
+    }
+  </script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/5f1b2a1d8a.js" crossorigin="anonymous"></script>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Favicon: prefer assets/images, fallback to root -->
+  <link rel="icon" type="image/png" href="assets/images/s_logo.png" />
+  <link rel="icon" type="image/png" href="s_logo.png" />
+</head>
+<body class="antialiased text-gray-800 bg-white">
+  <!-- Header -->
+  <header id="site-header" class="fixed w-full z-40">
+    <div class="bg-brand shadow" id="header-inner">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="#" class="" aria-label="Igor Santana">
+          <!-- Apenas a imagem como link; a imagem já contém o nome -->
+          <img src="assets/images/logo.jpg" onerror="this.onerror=null;this.src='logo.jpg'" alt="Igor Santana" class="h-12 w-auto object-contain" />
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-white" aria-label="Main navigation">
+          <a href="#about" class="hover:underline">Sobre</a>
+          <a href="#services" class="hover:underline">Serviços</a>
+          <a href="#team" class="hover:underline">Equipe</a>
+          <a href="#testimonials" class="hover:underline">Depoimentos</a>
+          <a href="#contact" class="hover:underline">Contato</a>
+          <a href="#contact" class="ml-4 inline-block bg-black text-brand px-4 py-2 rounded font-semibold">Agende uma Consulta</a>
+        </nav>
+
+        <div class="md:hidden flex items-center gap-3">
+          <button id="mobile-cta" class="bg-white text-brand px-3 py-2 rounded">Fale</button>
+          <button id="mobile-menu-btn" aria-label="Abrir menu" class="text-white text-2xl">☰</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile slide-in menu -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-3/4 max-w-xs bg-white text-brand transform translate-x-full transition-transform duration-300 shadow-lg z-50">
+      <div class="p-4">
+        <button id="mobile-menu-close" class="mb-4 text-xl">✕</button>
+        <nav class="flex flex-col gap-3">
+          <a href="#about">Sobre</a>
+          <a href="#services">Serviços</a>
+          <a href="#team">Equipe</a>
+          <a href="#testimonials">Depoimentos</a>
+          <a href="#contact">Contato</a>
+        </nav>
+      </div>
+    </div>
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/30 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+  </header>
+
+  <!-- Hero -->
+  <main id="home" class="pt-20">
+    <section class="bg-brand text-on-brand">
+      <div class="max-w-6xl mx-auto px-4 py-20 grid gap-8 md:grid-cols-2 items-center">
+        <div data-aos="fade-up">
+          <h1 id="hero-title" class="text-3xl sm:text-4xl md:text-5xl font-display font-bold">Especialistas em Direito Trabalhista</h1>
+          <p class="mt-4 text-lg text-on-brand/90">Soluções jurídicas à sua medida — atendimento humano e estratégico para trabalhadores e empresas.</p>
+          <div class="mt-8 flex gap-3">
+            <a href="#contact" class="bg-white text-brand px-6 py-3 rounded font-semibold shadow">Agende uma Consulta</a>
+            <a href="#about" class="border border-white/30 text-white px-6 py-3 rounded font-medium">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="bg-cream text-on-cream py-16" data-aos="fade-right">
+      <div class="max-w-6xl mx-auto px-4 grid gap-6 md:grid-cols-2 items-center">
+        <div>
+          <h2 class="text-3xl font-semibold text-on-cream">Sobre o Escritório</h2>
+          <p class="mt-4 text-on-cream/90">Com anos de experiência em direito do trabalho, nosso escritório oferece soluções jurídicas estratégicas, atuação em contencioso e consultoria preventiva. Atuamos com transparência, ética e foco no melhor resultado para nossos clientes.</p>
+
+          <div class="mt-6 grid grid-cols-3 gap-4">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-brand">15+</div>
+              <div class="text-sm text-gray-600">Anos de experiência</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-brand">120+</div>
+              <div class="text-sm text-gray-600">Casos conduzidos</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-brand">300+</div>
+              <div class="text-sm text-gray-600">Clientes atendidos</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop&s=placeholder" alt="Equipe jurídica" class="w-full rounded shadow-lg" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-12 bg-brand text-on-brand">
+      <div class="max-w-6xl mx-auto px-4" data-aos="fade-up">
+        <h2 class="text-2xl font-semibold text-on-brand text-center">Serviços</h2>
+        <div class="mt-8 grid gap-6 md:grid-cols-3">
+          <div class="p-6 rounded bg-white/5 hover:shadow">
+            <div class="text-on-brand text-3xl"><i class="fas fa-briefcase"></i></div>
+            <h3 class="mt-3 font-semibold text-on-brand">Consultoria Trabalhista</h3>
+            <p class="mt-2 text-on-brand/90">Orientação preventiva para empresas e empregados.</p>
+            <a href="#" class="mt-3 inline-block text-sm text-white/90">Ver serviço →</a>
+          </div>
+          <div class="p-6 rounded bg-white/5 hover:shadow">
+            <div class="text-on-brand text-3xl"><i class="fas fa-gavel"></i></div>
+            <h3 class="mt-3 font-semibold text-on-brand">Contencioso Trabalhista</h3>
+            <p class="mt-2 text-on-brand/90">Atuação em reclamações, audiências e recursos.</p>
+            <a href="#" class="mt-3 inline-block text-sm text-white/90">Ver serviço →</a>
+          </div>
+          <div class="p-6 rounded bg-white/5 hover:shadow">
+            <div class="text-on-brand text-3xl"><i class="fas fa-shield-alt"></i></div>
+            <h3 class="mt-3 font-semibold text-on-brand">Compliance e Treinamento</h3>
+            <p class="mt-2 text-on-brand/90">Políticas internas e treinamento de gestores.</p>
+            <a href="#" class="mt-3 inline-block text-sm text-white/90">Ver serviço →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Porque nos escolher / Diferenciais -->
+    <section id="differentials" class="py-12 bg-cream">
+      <div class="max-w-6xl mx-auto px-4" data-aos="fade-up">
+        <h2 class="text-2xl font-semibold text-on-cream text-center">Por que nos escolher</h2>
+        <div class="mt-8 grid gap-6 md:grid-cols-4 text-center text-on-cream">
+          <div class="p-4">
+            <div class="text-on-cream text-3xl"><i class="fas fa-history"></i></div>
+            <h4 class="mt-3 font-semibold">Experiência</h4>
+            <p class="text-sm mt-2">Anos de atuação em disputas trabalhistas.</p>
+          </div>
+          <div class="p-4">
+            <div class="text-on-cream text-3xl"><i class="fas fa-user-tie"></i></div>
+            <h4 class="mt-3 font-semibold">Equipe Especializada</h4>
+            <p class="text-sm mt-2">Advocacia focada e especializada em direito do trabalho.</p>
+          </div>
+          <div class="p-4">
+            <div class="text-on-cream text-3xl"><i class="fas fa-handshake"></i></div>
+            <h4 class="mt-3 font-semibold">Atendimento Personalizado</h4>
+            <p class="text-sm mt-2">Atendimento próximo e transparente.</p>
+          </div>
+          <div class="p-4">
+            <div class="text-on-cream text-3xl"><i class="fas fa-trophy"></i></div>
+            <h4 class="mt-3 font-semibold">Resultados</h4>
+            <p class="text-sm mt-2">Histórico de êxitos e soluções práticas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-12 bg-brand text-on-brand" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-semibold text-brand text-center">Depoimentos</h2>
+        <div class="mt-8 relative">
+          <div class="flex items-center justify-center">
+            <button id="test-prev" class="p-2 rounded-full bg-white shadow mr-3" aria-label="Anterior">‹</button>
+            <div id="testimonials-slider" class="overflow-hidden w-full max-w-3xl">
+              <div class="flex transition-transform duration-500" style="width:300%;">
+                <div class="w-full flex-shrink-0 px-4">
+                  <div class="bg-white p-6 rounded shadow">
+                    <p class="text-gray-700">"Profissionalismo e atenção. Resolveram meu caso com clareza e agilidade."</p>
+                    <div class="mt-3 font-semibold">— Maria S.</div>
+                  </div>
+                </div>
+                <div class="w-full flex-shrink-0 px-4">
+                  <div class="bg-white p-6 rounded shadow">
+                    <p class="text-gray-700">"Atendimento humano e técnico. Recomendo."</p>
+                    <div class="mt-3 font-semibold">— João P.</div>
+                  </div>
+                </div>
+                <div class="w-full flex-shrink-0 px-4">
+                  <div class="bg-white p-6 rounded shadow">
+                    <p class="text-gray-700">"Equipe dedicada e comunica muito bem o processo."</p>
+                    <div class="mt-3 font-semibold">— Fernanda R.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button id="test-next" class="p-2 rounded-full bg-white shadow ml-3" aria-label="Próximo">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog / Posts -->
+    <section id="blog" class="py-12 bg-cream" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-semibold text-brand">Publicações</h2>
+        <div id="posts-container" class="mt-6 grid gap-6 md:grid-cols-2"></div>
+      </div>
+    </section>
+
+    <!-- Team (single-member: Igor Santana) -->
+    <section id="team" class="py-12 bg-brand text-on-brand" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h2 class="text-2xl font-semibold">Conheça o advogado</h2>
+        <div class="mt-8 inline-block">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop&s=placeholder" alt="Dr. Igor Santana" class="mx-auto w-36 h-36 rounded-full object-cover shadow-md" />
+          <div class="mt-4 font-semibold text-lg">Dr. Igor Santana</div>
+          <div class="text-sm">Advogado Trabalhista — OAB/PR 128.723</div>
+          <p class="mt-3 max-w-xl mx-auto">Advogado com ampla experiência em direito do trabalho, dedicado à defesa dos direitos dos trabalhadores com transparência, ética e estratégias eficientes. Atendimento personalizado e acompanhamento próximo do cliente em todas as fases do processo.</p>
+        </div>
+      </div>
+    </section>
+
+  <!-- FAQ (cream to continue alternation) -->
+  <section id="faq" class="py-12 bg-cream text-on-cream" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-semibold text-on-cream text-center">Perguntas Frequentes</h2>
+      <div class="mt-6 grid gap-4 max-w-3xl mx-auto">
+        <details class="border rounded p-4 bg-white/10">
+          <summary class="font-medium">Como agendar uma consulta?</summary>
+          <p class="mt-2">Use o formulário de contato abaixo ou clique no ícone do WhatsApp para atendimento direto.</p>
+        </details>
+        <details class="border rounded p-4 bg-white/10">
+          <summary class="font-medium">Atendem pessoas e empresas?</summary>
+          <p class="mt-2">Sim. Fazemos atendimento personalizado para ambos os perfis.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-brand text-white" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-2xl font-semibold text-white text-center">Estamos prontos para ajudar você</h2>
+
+        <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <div>
+            <form id="contact-form" class="mt-4 space-y-4 text-white" novalidate>
+              <div>
+                <label class="sr-only" for="name">Nome</label>
+                <input id="name" name="from_name" required aria-label="Nome" placeholder="Nome" class="w-full bg-white/10 border border-white/20 rounded px-3 py-2 text-white placeholder:text-white/60" />
+              </div>
+              <div>
+                <label class="sr-only" for="email">Email</label>
+                <input id="email" name="reply_to" type="email" required aria-label="Email" placeholder="Email" class="w-full bg-white/10 border border-white/20 rounded px-3 py-2 text-white placeholder:text-white/60" />
+              </div>
+              <div>
+                <label class="sr-only" for="phone">Telefone</label>
+                <input id="phone" name="phone" type="tel" aria-label="Telefone" placeholder="Telefone" class="w-full bg-white/10 border border-white/20 rounded px-3 py-2 text-white placeholder:text-white/60" />
+              </div>
+              <div>
+                <label class="sr-only" for="message">Mensagem</label>
+                <textarea id="message" name="message" rows="5" required aria-label="Mensagem" placeholder="Mensagem" class="w-full bg-white/10 border border-white/20 rounded px-3 py-2 text-white placeholder:text-white/60"></textarea>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <button id="send-btn" type="submit" class="inline-flex items-center bg-white text-brand px-5 py-2 rounded font-semibold">
+                  <span id="send-label">Enviar</span>
+                  <svg id="send-spinner" class="hidden animate-spin ml-3 h-5 w-5 text-brand" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 11-8 8z"></path>
+                  </svg>
+                </button>
+                <div id="form-status" class="text-sm text-white/80"></div>
+              </div>
+            </form>
+          </div>
+
+          <aside class="space-y-4 text-white">
+            <div>
+              <h4 class="font-semibold">Localização</h4>
+              <p class="mt-2">Rua Pedro Gusso, 4127, CIC - Curitiba - PR, 81315-000</p>
+              <div class="mt-4 rounded overflow-hidden">
+                <iframe id="gmap" src="https://www.google.com/maps?q=Rua+Pedro+Gusso+4127+CIC+Curitiba+PR+81315000&output=embed" width="100%" height="200" style="border:0;filter:grayscale(0.2)brightness(0.9);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="font-semibold">Atendimento</h4>
+              <p class="mt-2">⚖️ Defendemos os direitos dos trabalhadores com transparência, ética e excelência.</p>
+              <p class="mt-2"><strong>Telefone:</strong> <a id="whatsapp-link" href="#" target="_blank" class="underline text-white">+55 41 8512-2438 (WhatsApp)</a></p>
+              <p class="mt-1 text-sm">OAB/PR 128.723 — Atendimento por agendamento</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  <!-- Footer -->
+    <!-- Footer -->
+    <footer class="bg-[#1a1a1a] text-gray-300 mt-12">
+      <div class="max-w-6xl mx-auto px-4 py-12 grid gap-6 md:grid-cols-3">
+        <div>
+          <h4 class="font-semibold text-white">Igor Santana Advocacia</h4>
+          <p class="text-sm mt-2">Atuação em Direito do Trabalho — consultoria, contencioso e prevenção.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white">Links Rápidos</h4>
+          <ul class="mt-2 space-y-1 text-sm">
+            <li><a href="#about" class="hover:underline">Sobre</a></li>
+            <li><a href="#blog" class="hover:underline">Blog</a></li>
+            <li><a href="#contact" class="hover:underline">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white">Contato</h4>
+          <p class="text-sm mt-2">Rua Pedro Gusso, 4127, CIC - Curitiba - PR</p>
+          <div class="mt-3 flex gap-3">
+            <a href="#" aria-label="Instagram" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="Facebook" class="text-gray-300 hover:text-white"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 py-4 text-center text-sm text-gray-500">© <span id="year"></span> Igor Santana Advocacia — Todos os direitos reservados • OAB/PR 128.723</div>
+    </footer>
+
+  <!-- WhatsApp floating -->
+  <a id="whatsapp-float" href="#" target="_blank" class="fixed right-4 bottom-20 bg-[#25D366] text-white p-3 rounded-full shadow-lg" aria-label="WhatsApp">💬</a>
+
+  <!-- Back to top -->
+  <button id="back-to-top" class="hidden fixed right-4 bottom-32 bg-brand text-white p-3 rounded-full shadow-lg" aria-label="Voltar ao topo">↑</button>
+
+  <!-- Chatbot widget -->
+  <div id="chatbot" class="fixed right-4 bottom-4">
+    <button id="chat-open" class="bg-brand text-white px-4 py-2 rounded shadow">Atendimento</button>
+    <div id="chatbox" class="hidden w-80 bg-white border rounded shadow-lg mt-2">
+      <div class="p-3 border-b">Atendimento virtual</div>
+      <div id="chat-messages" class="p-3 h-40 overflow-auto text-sm"></div>
+      <div class="p-3 flex gap-2">
+        <input id="chat-input" class="flex-1 border rounded px-3 py-2" placeholder="Escreva sua pergunta..." />
+        <button id="chat-send" class="bg-brand text-white px-3 py-2 rounded">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/chatbot.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
