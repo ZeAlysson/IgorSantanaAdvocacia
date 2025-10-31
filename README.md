@@ -92,21 +92,3 @@ git commit -m "Move logos to assets/images"
 ```
 
 Observação: o site já procura primeiro em `assets/images/` e tem fallback para os arquivos na raiz, então é seguro mover os arquivos conforme acima.
-
-## Publicando no GitHub
-
-1. Crie um repositório no GitHub (por exemplo `IgorSantanaAdvocacia`).
-
-2. No seu repositório local, conecte o remote (substitua a URL pelo seu repositório):
-
-```powershell
-git remote add origin https://github.com/SEU_USUARIO/IgorSantanaAdvocacia.git
-git branch -M main
-git push -u origin main
-```
-
-3. O projeto já inclui um workflow GitHub Actions (`.github/workflows/deploy-pages.yml`) que publica a raiz do repositório para a branch `gh-pages` sempre que você fizer push na `main` ou `master`. Após o primeiro push, aguarde alguns minutos e confira a aba Pages do repositório em Settings → Pages.
-
-4. Se preferir, você pode configurar o site para usar a branch `gh-pages` como source em Settings → Pages (manualmente) ou deixar o Actions cuidar disso automaticamente.
-
-Se quiser, eu posso rodar os comandos git locais para inicializar o repositório e criar o commit inicial aqui — quer que eu faça isso agora?
