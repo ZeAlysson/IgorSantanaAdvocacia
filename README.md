@@ -44,9 +44,27 @@ Abra http://localhost:3000 no navegador.
 
 Configurações necessárias
 - EmailJS: crie uma conta em https://www.emailjs.com, gere Service ID, Template ID e User ID. Substitua os placeholders em `assets/js/main.js`:
-  - `emailjs.init('YOUR_EMAILJS_USER_ID')`
+- `emailjs.init('YOUR_EMAILJS_USER_ID')`
   - `serviceID = 'YOUR_SERVICE_ID'`
   - `templateID = 'YOUR_TEMPLATE_ID'`
+
+Configuração recomendada (sem editar o JS):
+
+1. Abra `index.html` e localize o formulário de contato (`<form id="contact-form">`).
+2. Substitua os placeholders nos atributos `data-` adicionados ao formulário:
+
+```html
+<form id="contact-form"
+      data-emailjs-user="seu_USER_ID_aqui"
+      data-emailjs-service="seu_SERVICE_ID_aqui"
+      data-emailjs-template="seu_TEMPLATE_ID_aqui">
+  ...
+</form>
+```
+
+3. Salve e abra o site localmente. O `assets/js/main.js` irá ler esses atributos e inicializar o EmailJS automaticamente.
+
+Nota de segurança: esses IDs não são segredos críticos (são usados no cliente), mas evite publicar em repositórios públicos sem querer. Se preferir, mantenha os valores localmente e não os comite.
 
 - WhatsApp: edite a variável `phone` em `assets/js/main.js` com seu número no formato internacional (ex.: 5511999999999).
 

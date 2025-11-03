@@ -24,3 +24,27 @@ img{max-width:100%;height:auto}
 /* Utility to ensure text on brand backgrounds is readable */
 .text-on-brand { color: #ffffff; }
 .text-on-cream { color: var(--brand); }
+
+/* Testimonials slider styles */
+#testimonials-slider { position: relative; }
+#testimonials-slider .test-slides { display: flex; width: 100%; transition: transform 0.5s ease; }
+/* Each slide is full width, but inner card is centered and constrained */
+#testimonials-slider .test-slides .slide { flex: 0 0 100%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; }
+
+/* Card inside slide: white background */
+.testimonial-card { background: #ffffff; }
+
+/* Make the star glyph visually consistent */
+.text-yellow-400 { color: #f6c85f; }
+
+/* Small responsive tweak for testimonial text */
+@media (min-width: 768px) {
+	#testimonials-slider .test-slides .slide { padding-left: 3rem; padding-right: 3rem; }
+}
+
+/* Side arrow buttons */
+.testimonial-arrow { background: rgba(255,255,255,0.16); color: #ffffff; }
+.testimonial-arrow:hover { background: rgba(255,255,255,0.22); }
+
+/* Make stars a touch larger */
+.text-yellow-400 { color: #f6c85f; font-size: 1.05rem; }

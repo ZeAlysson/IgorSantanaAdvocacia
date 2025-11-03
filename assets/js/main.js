@@ -23,10 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const waLinks = [document.getElementById('whatsapp-link'), document.getElementById('whatsapp-float')];
   waLinks.forEach(el => { if (el) el.href = waHref; });
 
-  // EmailJS init - set your user ID
-  if (window.emailjs) {
-    emailjs.init('YOUR_EMAILJS_USER_ID'); // <-- REPLACE
-  }
+  // EmailJS initialization will be done below when the form is available.
+  // We intentionally delay init so we can read data attributes from the form
+  // (data-emailjs-user etc.) — this avoids hardcoding secrets in the JS file.
 
   // Mobile menu toggle
   mobileBtn && mobileBtn.addEventListener('click', () => {
@@ -80,18 +79,25 @@ document.addEventListener('DOMContentLoaded', function () {
   // Back to top
   if (backToTop) backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  // Testimonials slider (simple)
+  // Testimonials slider (simple, robust)
   (function initTestimonials() {
     const wrapper = document.querySelector('#testimonials-slider');
     if (!wrapper) return;
-    const container = wrapper.querySelector('div');
-    const slideCount = container.children.length;
+    const container = wrapper.querySelector('.test-slides');
+    if (!container) return;
+    const slides = Array.from(container.children);
+    const slideCount = slides.length;
+    if (slideCount === 0) return;
     let idx = 0;
 
+    // ensure layout: each slide takes full wrapper width
+    container.style.display = 'flex';
+    container.style.transition = 'transform 0.5s ease';
+    slides.forEach(s => { s.style.flex = '0 0 100%'; s.style.boxSizing = 'border-box'; });
+
     function go(i) {
-      idx = (i + slideCount) % slideCount;
-      const percent = (idx * 100) / slideCount;
-      container.style.transform = `translateX(-${percent}%)`;
+      idx = ((i % slideCount) + slideCount) % slideCount;
+      container.style.transform = `translateX(-${idx * 100}%)`;
     }
 
     // auto play
@@ -102,6 +108,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const next = document.getElementById('test-next');
     prev && prev.addEventListener('click', () => { go(idx - 1); clearInterval(timer); timer = setInterval(() => go(idx + 1), 5000); });
     next && next.addEventListener('click', () => { go(idx + 1); clearInterval(timer); timer = setInterval(() => go(idx + 1), 5000); });
+
+    // expose for debugging if needed
+    wrapper.goTo = go;
   })();
 
   // Contact form handling with validation and loading
@@ -110,6 +119,16 @@ document.addEventListener('DOMContentLoaded', function () {
   const sendLabel = document.getElementById('send-label');
   const sendSpinner = document.getElementById('send-spinner');
   const statusEl = document.getElementById('form-status');
+
+  // EmailJS: read IDs from data attributes on the form (safer than editing JS)
+  // Add the following attributes to the <form> tag in index.html:
+  // data-emailjs-user, data-emailjs-service, data-emailjs-template
+  const emailjsUser = form?.dataset?.emailjsUser;
+  const emailjsService = form?.dataset?.emailjsService;
+  const emailjsTemplate = form?.dataset?.emailjsTemplate;
+  if (window.emailjs && emailjsUser) {
+    try { emailjs.init(emailjsUser); } catch (err) { console.warn('EmailJS init failed', err); }
+  }
 
   function setLoading(on) {
     if (on) {
@@ -140,8 +159,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Try EmailJS if available
       if (window.emailjs) {
-        const serviceID = 'YOUR_SERVICE_ID';
-        const templateID = 'YOUR_TEMPLATE_ID';
+        const serviceID = emailjsService || 'YOUR_SERVICE_ID';
+        const templateID = emailjsTemplate || 'YOUR_TEMPLATE_ID';
+        // If the developer forgot to set real IDs, we still call sendForm which
+        // will likely fail - the fallback below will handle that case.
         emailjs.sendForm(serviceID, templateID, form)
           .then(() => {
             setLoading(false);
@@ -150,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }).catch(err => {
             console.error('EmailJS error', err);
             setLoading(false);
-            statusEl.textContent = 'Erro ao enviar. Tente novamente mais tarde.';
+            statusEl.textContent = 'Erro ao enviar via EmailJS. Verifique suas configurações.';
           });
       } else {
         // Fallback: simulate send (since no server)
