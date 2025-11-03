@@ -1,5 +1,12 @@
 // main.js — handles AOS, EmailJS form, posts loading and UI interactions
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
+  // Wait for client-side includes to be loaded (partials) so elements exist
+  if (document.querySelector('[data-include]')) {
+    if (!window.__includesLoaded) {
+      await new Promise(resolve => document.addEventListener('includes:loaded', resolve, { once: true }));
+    }
+  }
+
   // init AOS
   if (window.AOS) AOS.init({ duration: 700, once: true });
 

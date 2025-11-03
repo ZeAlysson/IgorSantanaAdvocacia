@@ -93,6 +93,9 @@ IgorSantanaAdvocacia/
 ├─ posts/
 ├─ index.html
 ├─ README.md
+├─ partials/    <- header.html e footer.html (reutilizados pelas páginas)
+├─ privacy.html
+├─ terms.html
 ```
 
 Mover os arquivos (ex.: Windows cmd):
