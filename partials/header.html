@@ -1,39 +1,92 @@
 <!-- Partial: header.html -->
  
-<header id="site-header" class="fixed w-full z-40">
-  <div class="bg-brand shadow" id="header-inner">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+<header id="site-header" class="w-full z-40">
+  <div class="shadow" id="header-inner">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
       <a href="index.html" class="" aria-label="Igor Santana">
         <img src="assets/images/logo.jpg" onerror="this.onerror=null;this.src='logo.jpg'" alt="Igor Santana" class="h-12 w-auto object-contain" />
       </a>
 
-      <nav class="hidden md:flex items-center gap-6 text-white" aria-label="Main navigation">
-        <a href="#about" class="hover:underline">Sobre</a>
-        <a href="#services" class="hover:underline">Serviços</a>
-        <a href="#team" class="hover:underline">Equipe</a>
-        <a href="#testimonials" class="hover:underline">Depoimentos</a>
-        <a href="#contact" class="hover:underline">Contato</a>
-        <a id="whatsapp-float" href="#" target="_blank" aria-label="WhatsApp" class="ml-4 inline-block bg-black text-brand px-4 py-2 rounded font-semibold">Fale com um especialista</a>
+      <nav class="hidden md:flex items-center gap-4 text-sm text-white/90" aria-label="Main navigation">
+        <a href="#about" class="nav-link inline-flex items-center gap-2 px-3 py-2 rounded-full transition hover:bg-white/10 hover:text-white">
+          <span>Quem somos</span>
+        </a>
+        <span class="h-2 w-2 rounded-full bg-white/20" aria-hidden="true"></span>
+        <a href="#services" class="nav-link inline-flex items-center gap-2 px-3 py-2 rounded-full transition hover:bg-white/10 hover:text-white">
+          <span>Serviços</span>
+        </a>
+        <span class="h-2 w-2 rounded-full bg-white/20" aria-hidden="true"></span>
+        <a href="#blog" class="nav-link inline-flex items-center gap-2 px-3 py-2 rounded-full transition hover:bg-white/10 hover:text-white">
+          <span>Blog</span>
+        </a>
+        <span class="h-2 w-2 rounded-full bg-white/20" aria-hidden="true"></span>
+        <div class="ml-6 inline-flex items-center gap-3">
+          <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/40 text-white/90 hover:text-white hover:border-white transition">
+            <i class="fas fa-phone" aria-hidden="true"></i>
+            <span>Fale Conosco</span>
+          </a>
+        </div>
       </nav>
 
       <div class="md:hidden flex items-center gap-3">
-        <button id="mobile-cta" class="bg-white text-brand px-3 py-2 rounded">Fale</button>
-        <button id="mobile-menu-btn" aria-label="Abrir menu" class="text-white text-2xl">☰</button>
+  <button id="mobile-cta" type="button" class="inline-flex items-center gap-2 bg-white text-brand px-4 py-2 rounded-full text-sm font-semibold shadow-sm shadow-white/40">
+          <i class="fas fa-phone" aria-hidden="true"></i>
+          Fale
+        </button>
+  <button id="mobile-menu-btn" type="button" aria-label="Abrir menu" class="bg-white/10 text-white p-2.5 rounded-full text-xl shadow-sm">
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
   </div>
 
   <!-- Mobile slide-in menu -->
   <div id="mobile-menu" class="fixed inset-y-0 right-0 w-3/4 max-w-xs bg-white text-brand transform translate-x-full transition-transform duration-300 shadow-lg z-50">
-    <div class="p-4">
-      <button id="mobile-menu-close" class="mb-4 text-xl">✕</button>
-      <nav class="flex flex-col gap-3">
-        <a href="#about">Sobre</a>
-        <a href="#services">Serviços</a>
-        <a href="#team">Equipe</a>
-        <a href="#testimonials">Depoimentos</a>
-        <a href="#contact">Contato</a>
+    <div class="p-5 space-y-4">
+      <div class="flex items-center justify-between">
+        <span class="text-sm font-semibold text-brand/70 uppercase tracking-[0.28em]">Menu</span>
+        <button id="mobile-menu-close" class="text-xl text-brand" aria-label="Fechar menu">✕</button>
+      </div>
+      <nav class="flex flex-col gap-4 text-brand/90 text-base">
+        <a href="#about" class="flex items-center gap-3 px-2 py-2 rounded-xl transition hover:bg-brand/5">
+          <i class="fas fa-circle text-[6px]" aria-hidden="true"></i>
+          <span>Sobre</span>
+        </a>
+        <a href="#services" class="flex items-center gap-3 px-2 py-2 rounded-xl transition hover:bg-brand/5">
+          <i class="fas fa-circle text-[6px]" aria-hidden="true"></i>
+          <span>Serviços</span>
+        </a>
+        <a href="#team" class="flex items-center gap-3 px-2 py-2 rounded-xl transition hover:bg-brand/5">
+          <i class="fas fa-circle text-[6px]" aria-hidden="true"></i>
+          <span>Equipe</span>
+        </a>
+        <a href="#testimonials" class="flex items-center gap-3 px-2 py-2 rounded-xl transition hover:bg-brand/5">
+          <i class="fas fa-circle text-[6px]" aria-hidden="true"></i>
+          <span>Depoimentos</span>
+        </a>
+        <a href="#blog" class="flex items-center gap-3 px-2 py-2 rounded-xl transition hover:bg-brand/5">
+          <i class="fas fa-circle text-[6px]" aria-hidden="true"></i>
+          <span>Blog</span>
+        </a>
+        <a href="#faq" class="flex items-center gap-3 px-2 py-2 rounded-xl transition hover:bg-brand/5">
+          <i class="fas fa-circle text-[6px]" aria-hidden="true"></i>
+          <span>FAQ</span>
+        </a>
+        <a href="#contact" class="flex items-center gap-3 px-2 py-2 rounded-xl transition hover:bg-brand/5">
+          <i class="fas fa-circle text-[6px]" aria-hidden="true"></i>
+          <span>Contato</span>
+        </a>
       </nav>
+      <div class="pt-4 border-t border-brand/10 space-y-3">
+        <a data-wa-link href="#" target="_blank" aria-label="WhatsApp" class="flex items-center justify-center gap-2 bg-brand text-white px-4 py-3 rounded-xl font-semibold shadow-md">
+          <i class="fab fa-whatsapp text-lg" aria-hidden="true"></i>
+          Fale com um especialista
+        </a>
+        <a href="#contact" class="w-full inline-flex items-center justify-center gap-2 border border-brand/20 text-brand px-4 py-3 rounded-xl hover:bg-brand/5 transition">
+          <i class="fas fa-calendar-check" aria-hidden="true"></i>
+          Agendar consulta
+        </a>
+      </div>
     </div>
   </div>
   <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/30 opacity-0 pointer-events-none transition-opacity duration-300"></div>

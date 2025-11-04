@@ -27,8 +27,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   const phone = '554185122438'; // +55 41 8512-2438
   const message = encodeURIComponent('Olá, quero agendar uma consulta.');
   const waHref = `https://wa.me/${phone}?text=${message}`;
-  const waLinks = [document.getElementById('whatsapp-link'), document.getElementById('whatsapp-float')];
-  waLinks.forEach(el => { if (el) el.href = waHref; });
+  document.querySelectorAll('[data-wa-link]').forEach(el => { el.href = waHref; });
 
   // EmailJS initialization will be done below when the form is available.
   // We intentionally delay init so we can read data attributes from the form

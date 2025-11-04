@@ -46,100 +46,184 @@
   <div data-include="partials/header.html"></div>
 
   <!-- Hero -->
-  <main id="home" class="pt-20">
+  <main id="home">
     <section class="bg-brand text-on-brand">
-      <div class="max-w-6xl mx-auto px-4 py-20 grid gap-8 md:grid-cols-2 items-center">
-        <div data-aos="fade-up">
-          <h1 id="hero-title" class="text-3xl sm:text-4xl md:text-5xl font-display font-bold">Especialistas em Direito Trabalhista</h1>
-          <p class="mt-4 text-lg text-on-brand/90">Soluções jurídicas à sua medida — atendimento humano e estratégico para trabalhadores e empresas.</p>
-          <div class="mt-8 flex gap-3">
-            <a href="#contact" class="bg-white text-brand px-6 py-3 rounded font-semibold shadow">Agende uma Consulta</a>
-            <a href="#about" class="border border-white/30 text-white px-6 py-3 rounded font-medium">Saiba mais</a>
+      <div class="max-w-6xl mx-auto px-4 grid gap-12 md:grid-cols-[1.1fr,0.9fr] items-center">
+        <div class="space-y-6" data-aos="fade-up">
+          <span class="inline-flex items-center gap-2 bg-white/10 text-xs sm:text-sm uppercase tracking-[0.3em] text-white/70 px-4 py-1.5 rounded-full backdrop-blur-sm">
+            <i class="fas fa-scale-balanced text-white/80"></i>
+            Advocacia Trabalhista Boutique
+          </span>
+          <h1 id="hero-title" class="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-display font-semibold leading-tight">
+            Defesa trabalhista clara para <span class="text-[#f6c85f] font-bold">quem busca justiça</span>
+          </h1>
+          <p class="text-lg sm:text-xl text-white/85 max-w-xl">
+            Analisamos seu caso com atenção, explicamos cada passo sem juridiquês e negociamos soluções justas do começo ao fim.
+          </p>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4 pt-2">
+            <a href="#contact" class="inline-flex items-center justify-center gap-3 bg-white text-brand px-7 py-3 rounded-full font-semibold shadow-lg shadow-white/20 hover:shadow-xl hover:shadow-white/30 transition">
+              <i class="fas fa-calendar-check text-brand"></i>
+              Marcar uma conversa
+            </a>
+            <a href="#about" class="inline-flex items-center justify-center gap-2 border border-white/40 text-white px-7 py-3 rounded-full font-medium backdrop-blur-sm hover:bg-white/10 transition">
+              <i class="fas fa-circle-info"></i>
+              Conhecer nossa atuação
+            </a>
+          </div>
+        </div>
+
+        <div class="hidden md:flex justify-center" data-aos="fade-left">
+          <div class="relative w-full max-w-md">
+            <div class="absolute -top-10 -left-6 w-24 h-24 rounded-3xl border border-white/15 bg-white/10 backdrop-blur-xl"></div>
+            <div class="absolute -bottom-10 -right-8 w-20 h-20 rounded-full border border-white/20 bg-white/5 backdrop-blur-lg"></div>
+            <div class="relative overflow-hidden rounded-[32px] border border-white/18 bg-white/10 backdrop-blur-2xl shadow-[0_40px_80px_rgba(0,0,0,0.35)]">
+              <img src="assets/images/direito-do-trabalho-2.png" alt="Advogado analisando documentos" class="h-80 w-full object-cover" />
+              <div class="p-6 space-y-4 text-left bg-gradient-to-b from-black/20 via-black/10 to-transparent">
+                <div class="text-sm uppercase tracking-[0.3em] text-white/60">Resultados Reais</div>
+                <p class="text-lg font-semibold text-white/95">Cada caso recebe um plano simples e prático. Negociamos, representamos e mantemos você informado.</p>
+                <div class="flex items-center gap-3 text-sm text-white/75">
+                  <i class="fas fa-gavel text-[#f6c85f]"></i>
+                  <span>Mediações resolvidas em até 90 dias</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- About -->
-    <section id="about" class="bg-cream text-on-cream py-16" data-aos="fade-right">
-      <div class="max-w-6xl mx-auto px-4 grid gap-6 md:grid-cols-2 items-center">
-        <div>
-          <h2 class="text-3xl font-semibold text-on-cream">Sobre o Escritório</h2>
-          <p class="mt-4 text-on-cream/90">Com anos de experiência em direito do trabalho, nosso escritório oferece soluções jurídicas estratégicas, atuação em contencioso e consultoria preventiva. Atuamos com transparência, ética e foco no melhor resultado para nossos clientes.</p>
-
-          <div class="mt-6 grid grid-cols-3 gap-4">
-            <div class="text-center">
-              <div class="text-2xl font-bold text-brand">15+</div>
-              <div class="text-sm text-gray-600">Anos de experiência</div>
+    <section id="about" class="bg-cream text-on-cream py-20">
+      <div class="max-w-6xl mx-auto px-4 grid gap-12 md:grid-cols-2 items-center">
+        <div class="space-y-6" data-aos="fade-right">
+          <span class="inline-flex items-center gap-2 text-brand/70 bg-white/60 px-3 py-1 rounded-full text-xs uppercase tracking-[0.32em]">Nossa essência</span>
+          <h2 class="text-3xl sm:text-4xl font-semibold text-on-cream max-w-xl">Estratégia e cuidado em cada relação de trabalho</h2>
+          <p class="text-on-cream/90 leading-relaxed">Atuamos na prevenção e na solução de conflitos com linguagem simples e decisões combinadas com você. Definimos o plano, mostramos os prazos e explicamos cada documento necessário.</p>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl border border-brand/15 bg-white/70 p-5 shadow-sm shadow-brand/5">
+              <div class="text-3xl font-bold text-brand">93%</div>
+              <p class="text-sm text-brand/70">Dos conflitos evitados com orientações objetivas e rápidas.</p>
             </div>
-            <div class="text-center">
-              <div class="text-2xl font-bold text-brand">120+</div>
-              <div class="text-sm text-gray-600">Casos conduzidos</div>
+            <div class="rounded-2xl border border-brand/15 bg-white/70 p-5 shadow-sm shadow-brand/5">
+              <div class="text-3xl font-bold text-brand">4,9/5</div>
+              <p class="text-sm text-brand/70">Avaliação média dos clientes que atendemos nos últimos dois anos.</p>
             </div>
-            <div class="text-center">
-              <div class="text-2xl font-bold text-brand">300+</div>
-              <div class="text-sm text-gray-600">Clientes atendidos</div>
+            <div class="rounded-2xl border border-brand/10 bg-white/60 p-5 shadow-sm">
+              <div class="text-3xl font-bold text-brand">120+</div>
+              <p class="text-sm text-brand/70">Casos encerrados por acordo antes da audiência final.</p>
+            </div>
+            <div class="rounded-2xl border border-brand/10 bg-white/60 p-5 shadow-sm">
+              <div class="text-3xl font-bold text-brand">5 anos</div>
+              <p class="text-sm text-brand/70">De atuação constante em audiências e negociações coletivas.</p>
             </div>
           </div>
         </div>
 
-        <div>
-          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop&s=placeholder" alt="Equipe jurídica" class="w-full rounded shadow-lg" />
+        <div class="relative" data-aos="fade-left">
+          <div class="absolute -top-6 -left-8 h-32 w-32 rounded-full bg-brand/10 blur-3xl"></div>
+          <div class="absolute -bottom-8 -right-10 h-40 w-40 rounded-3xl bg-brand/10 blur-2xl"></div>
+          <div class="relative overflow-hidden rounded-[32px] border border-brand/20 bg-white/70 shadow-lg shadow-brand/10">
+            <img src="assets/images/escritorio.jpg" alt="Reunião jurídica em escritório" class="h-[420px] w-full object-cover" />
+            <div class="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/50 bg-white/80 px-6 py-4 text-brand shadow">
+              <div class="flex items-center gap-3 text-sm font-medium">
+                <i class="fas fa-user-shield text-brand"></i>
+                <span>Acompanhamento dedicado e sigiloso em cada etapa.</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Services -->
-    <section id="services" class="py-12 bg-brand text-on-brand">
-      <div class="max-w-6xl mx-auto px-4" data-aos="fade-up">
-        <h2 class="text-2xl font-semibold text-on-brand text-center">Serviços</h2>
-        <div class="mt-8 grid gap-6 md:grid-cols-3">
-          <div class="p-6 rounded bg-white/5 hover:shadow">
-            <div class="text-on-brand text-3xl"><i class="fas fa-briefcase"></i></div>
-            <h3 class="mt-3 font-semibold text-on-brand">Consultoria Trabalhista</h3>
-            <p class="mt-2 text-on-brand/90">Orientação preventiva para empresas e empregados.</p>
-            <a href="#" class="mt-3 inline-block text-sm text-white/90">Ver serviço →</a>
-          </div>
-          <div class="p-6 rounded bg-white/5 hover:shadow">
-            <div class="text-on-brand text-3xl"><i class="fas fa-gavel"></i></div>
-            <h3 class="mt-3 font-semibold text-on-brand">Contencioso Trabalhista</h3>
-            <p class="mt-2 text-on-brand/90">Atuação em reclamações, audiências e recursos.</p>
-            <a href="#" class="mt-3 inline-block text-sm text-white/90">Ver serviço →</a>
-          </div>
-          <div class="p-6 rounded bg-white/5 hover:shadow">
-            <div class="text-on-brand text-3xl"><i class="fas fa-shield-alt"></i></div>
-            <h3 class="mt-3 font-semibold text-on-brand">Compliance e Treinamento</h3>
-            <p class="mt-2 text-on-brand/90">Políticas internas e treinamento de gestores.</p>
-            <a href="#" class="mt-3 inline-block text-sm text-white/90">Ver serviço →</a>
-          </div>
+    <section id="services" class="py-20 bg-brand text-on-brand">
+      <div class="max-w-6xl mx-auto px-4 space-y-10" data-aos="fade-up">
+        <div class="max-w-3xl mx-auto text-center space-y-4">
+          <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.28em] text-white/70 bg-white/10 px-4 py-1.5 rounded-full">Como podemos ajudar</span>
+          <h2 class="text-3xl sm:text-4xl font-semibold">Serviços para empresas e trabalhadores</h2>
+          <p class="text-white/80">Você recebe orientações, prazos e próximos passos desde o primeiro contato. Cada serviço tem um roteiro claro para que nada fique sem resposta.</p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="group relative overflow-hidden rounded-3xl border border-white/15 bg-white/10 backdrop-blur-xl p-8 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            <div class="absolute -top-10 -right-10 h-32 w-32 rounded-full bg-white/10 blur-3xl"></div>
+            <div class="inline-flex items-center justify-center rounded-full bg-white/15 p-3 text-2xl">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <h3 class="mt-6 text-xl font-semibold">Consultoria Trabalhista</h3>
+            <p class="mt-3 text-white/80 leading-relaxed">Analisamos contratos, políticas internas e dúvidas pontuais para evitar conflitos e organizar a rotina do trabalho.</p>
+            <a href="#contact" class="mt-6 inline-flex items-center gap-2 text-sm text-white/85 font-medium hover:text-white transition">
+              <span>Quero saber como funciona</span>
+              <i class="fas fa-arrow-right-long transition-transform group-hover:translate-x-1"></i>
+            </a>
+          </article>
+
+          <article class="group relative overflow-hidden rounded-3xl border border-white/15 bg-white/10 backdrop-blur-xl p-8 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            <div class="absolute -top-8 -right-8 h-28 w-28 rounded-3xl bg-white/10 blur-3xl"></div>
+            <div class="inline-flex items-center justify-center rounded-full bg-white/15 p-3 text-2xl">
+              <i class="fas fa-gavel"></i>
+            </div>
+            <h3 class="mt-6 text-xl font-semibold">Contencioso Trabalhista</h3>
+            <p class="mt-3 text-white/80 leading-relaxed">Representamos você em audiências, preparamos defesas e avisamos cada avanço do processo em linguagem simples.</p>
+            <a href="#contact" class="mt-6 inline-flex items-center gap-2 text-sm text-white/85 font-medium hover:text-white transition">
+              <span>Quero uma orientação</span>
+              <i class="fas fa-arrow-right-long transition-transform group-hover:translate-x-1"></i>
+            </a>
+          </article>
+
+          <article class="group relative overflow-hidden rounded-3xl border border-white/15 bg-white/10 backdrop-blur-xl p-8 shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
+            <div class="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-white/10 blur-3xl"></div>
+            <div class="inline-flex items-center justify-center rounded-full bg-white/15 p-3 text-2xl">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="mt-6 text-xl font-semibold">Compliance e Treinamento</h3>
+            <p class="mt-3 text-white/80 leading-relaxed">Criamos programas simples de compliance, treinamentos e auditorias para manter equipes alinhadas e seguras.</p>
+            <a href="#contact" class="mt-6 inline-flex items-center gap-2 text-sm text-white/85 font-medium hover:text-white transition">
+              <span>Solicitar um treinamento</span>
+              <i class="fas fa-arrow-right-long transition-transform group-hover:translate-x-1"></i>
+            </a>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Porque nos escolher / Diferenciais -->
-    <section id="differentials" class="py-12 bg-cream">
-      <div class="max-w-6xl mx-auto px-4" data-aos="fade-up">
-        <h2 class="text-2xl font-semibold text-on-cream text-center">Por que nos escolher</h2>
-        <div class="mt-8 grid gap-6 md:grid-cols-4 text-center text-on-cream">
-          <div class="p-4">
-            <div class="text-on-cream text-3xl"><i class="fas fa-history"></i></div>
-            <h4 class="mt-3 font-semibold">Experiência</h4>
-            <p class="text-sm mt-2">Anos de atuação em disputas trabalhistas.</p>
+    <section id="differentials" class="py-20 bg-cream">
+      <div class="max-w-6xl mx-auto px-4 space-y-10" data-aos="fade-up">
+        <div class="text-center space-y-4 max-w-3xl mx-auto">
+          <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.28em] text-brand/70 bg-white/80 px-4 py-1.5 rounded-full">Nossos diferenciais</span>
+          <h2 class="text-3xl sm:text-4xl font-semibold text-on-cream">Por que escolher nosso escritório</h2>
+          <p class="text-on-cream/80">Acompanhamos cada passo junto com você, avaliamos riscos com antecedência e mostramos as opções de forma transparente.</p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-4 text-on-cream">
+          <div class="relative overflow-hidden rounded-3xl border border-brand/15 bg-white/90 p-6 text-center shadow-lg shadow-brand/10">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand/10 text-brand text-2xl">
+              <i class="fas fa-history"></i>
+            </div>
+            <h4 class="mt-5 text-lg font-semibold">Experiência Multissetorial</h4>
+            <p class="mt-3 text-sm text-brand/70 leading-relaxed">Experiência em diferentes segmentos, de indústrias a serviços, sempre com exemplos práticos.</p>
           </div>
-          <div class="p-4">
-            <div class="text-on-cream text-3xl"><i class="fas fa-user-tie"></i></div>
-            <h4 class="mt-3 font-semibold">Equipe Especializada</h4>
-            <p class="text-sm mt-2">Advocacia focada e especializada em direito do trabalho.</p>
+          <div class="relative overflow-hidden rounded-3xl border border-brand/15 bg-white/90 p-6 text-center shadow-lg shadow-brand/10">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand/10 text-brand text-2xl">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <h4 class="mt-5 text-lg font-semibold">Equipe Especializada</h4>
+            <p class="mt-3 text-sm text-brand/70 leading-relaxed">Equipe dedicada ao Direito do Trabalho, com atualização contínua das normas e decisões.</p>
           </div>
-          <div class="p-4">
-            <div class="text-on-cream text-3xl"><i class="fas fa-handshake"></i></div>
-            <h4 class="mt-3 font-semibold">Atendimento Personalizado</h4>
-            <p class="text-sm mt-2">Atendimento próximo e transparente.</p>
+          <div class="relative overflow-hidden rounded-3xl border border-brand/15 bg-white/90 p-6 text-center shadow-lg shadow-brand/10">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand/10 text-brand text-2xl">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h4 class="mt-5 text-lg font-semibold">Atendimento Humanizado</h4>
+            <p class="mt-3 text-sm text-brand/70 leading-relaxed">Canais diretos de contato, reuniões periódicas e relatórios simples.</p>
           </div>
-          <div class="p-4">
-            <div class="text-on-cream text-3xl"><i class="fas fa-trophy"></i></div>
-            <h4 class="mt-3 font-semibold">Resultados</h4>
-            <p class="text-sm mt-2">Histórico de êxitos e soluções práticas.</p>
+          <div class="relative overflow-hidden rounded-3xl border border-brand/15 bg-white/90 p-6 text-center shadow-lg shadow-brand/10">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand/10 text-brand text-2xl">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h4 class="mt-5 text-lg font-semibold">Resultados Consistentes</h4>
+            <p class="mt-3 text-sm text-brand/70 leading-relaxed">Foco em acordos vantajosos, redução de custos e ambiente de trabalho saudável.</p>
           </div>
         </div>
       </div>
@@ -205,39 +289,76 @@
 
 
     <!-- Blog / Posts -->
-    <section id="blog" class="py-12 bg-cream" data-aos="fade-up">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl font-semibold text-brand">Publicações</h2>
-        <div id="posts-container" class="mt-6 grid gap-6 md:grid-cols-2"></div>
+    <section id="blog" class="py-20 bg-cream" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto px-4 space-y-8">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div class="space-y-3 max-w-2xl">
+            <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.28em] text-brand/70 bg-white/80 px-4 py-1.5 rounded-full">Conteúdo</span>
+            <h2 class="text-3xl font-semibold text-brand">Textos simples para tirar dúvidas</h2>
+            <p class="text-brand/70">Artigos curtos com explicações diretas sobre direitos, deveres e boas práticas nas relações de trabalho.</p>
+          </div>
+          <a href="#contact" class="inline-flex items-center gap-2 text-sm font-medium text-brand border border-brand/30 px-4 py-2 rounded-full hover:bg-brand hover:text-white transition">
+            Sugerir um novo tema
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div id="posts-container" class="grid gap-6 md:grid-cols-2"></div>
       </div>
     </section>
 
     <!-- Team (single-member: Igor Santana) -->
-    <section id="team" class="py-12 bg-brand text-on-brand" data-aos="fade-up">
-      <div class="max-w-6xl mx-auto px-4 text-center">
-        <h2 class="text-2xl font-semibold">Conheça o advogado</h2>
-        <div class="mt-8 inline-block">
-          <img src="assets/images/igor.jpg" alt="Dr. Igor Santana" class="mx-auto w-36 h-36 rounded-full object-cover shadow-md" />
-          <div class="mt-4 font-semibold text-lg">Dr. Igor Santana</div>
-          <div class="text-sm">Advogado Trabalhista — OAB/PR 128.723</div>
-          <p class="mt-3 max-w-xl mx-auto">Advogado com ampla experiência em direito do trabalho, dedicado à defesa dos direitos dos trabalhadores com transparência, ética e estratégias eficientes. Atendimento personalizado e acompanhamento próximo do cliente em todas as fases do processo.</p>
+    <section id="team" class="py-20 bg-brand text-on-brand" data-aos="fade-up">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center space-y-3">
+          <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.28em] text-white/75 bg-white/10 px-4 py-1.5 rounded-full">Equipe</span>
+          <h2 class="text-3xl font-semibold">Quem conduz o escritório</h2>
+          <p class="text-white/80">Trabalho pautado por ética, conversa aberta e soluções rápidas para conflitos trabalhistas.</p>
+        </div>
+
+        <div class="mt-12 grid gap-8 lg:grid-cols-[0.9fr,1.1fr] items-center">
+          <div class="relative mx-auto flex h-60 w-60 items-center justify-center rounded-full border border-white/25 bg-white/10 backdrop-blur-lg shadow-2xl shadow-black/30">
+            <img src="assets/images/igor.jpg" alt="Dr. Igor Santana" class="h-52 w-52 rounded-full object-cover" />
+            <div class="absolute -bottom-4 right-2 rounded-2xl border border-white/30 bg-white/20 px-4 py-2 text-xs uppercase tracking-[0.24em] text-white/80">OAB/PR 128.723</div>
+          </div>
+
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-2xl font-semibold">Dr. Igor Santana</h3>
+              <p class="mt-3 text-white/80 leading-relaxed">Especialista em Direito do Trabalho, conduz negociações e defesas com linguagem simples e foco em resultados sustentáveis. Trabalha lado a lado com clientes para reduzir riscos e buscar soluções justas.</p>
+            </div>
+            <ul class="grid gap-3 text-white/85">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-comments mt-1 text-[#f6c85f]"></i>
+                <span>Atendimento direto por meios digitais e presenciais, com atualizações frequentes.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-scale-balanced mt-1 text-[#f6c85f]"></i>
+              <span>Experiência em acordos coletivos, reestruturações e defesa de trabalhadores.</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
   <!-- FAQ (cream to continue alternation) -->
-  <section id="faq" class="py-12 bg-cream text-on-cream" data-aos="fade-up">
+  <section id="faq" class="py-20 bg-cream text-on-cream" data-aos="fade-up">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl font-semibold text-on-cream text-center">Perguntas Frequentes</h2>
-      <div class="mt-6 grid gap-4 max-w-3xl mx-auto">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+  <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.28em] text-brand/70 bg-white/80 px-4 py-1.5 rounded-full">Dúvidas comuns</span>
+  <h2 class="text-3xl font-semibold text-on-cream">Perguntas frequentes</h2>
+  <p class="text-on-cream/80">Aqui estão respostas rápidas sobre agendamento, documentos e como funciona o atendimento trabalhista.</p>
+      </div>
+      <div class="mt-10 grid gap-4 max-w-3xl mx-auto">
         <details class="border rounded p-4 bg-white/10">
           <summary class="font-medium">Como agendar uma consulta?</summary>
-          <p class="mt-2">Você pode agendar pelo formulário de contato nesta página, clicando em "Agende uma Consulta", ou iniciando uma conversa pelo WhatsApp. Informe seu nome, motivo do contato e um telefone para retorno. Nossa equipe entrará em contato para confirmar dia e horário.</p>
+          <p class="mt-2">Preencha o formulário desta página ou envie uma mensagem pelo WhatsApp. Informe nome, motivo do contato e telefone. Em seguida confirmamos o dia e o horário.</p>
         </details>
 
         <details class="border rounded p-4 bg-white/10">
           <summary class="font-medium">Atendem pessoas e empresas?</summary>
-          <p class="mt-2">Sim. Atuamos tanto para trabalhadores quanto para empresas, oferecendo consultoria preventiva, negociações e representação em ações trabalhistas. O atendimento é personalizado conforme o perfil do cliente.</p>
+          <p class="mt-2">Sim. Atendemos trabalhadores e empresas com consultoria, negociações e ações trabalhistas. O formato é ajustado à necessidade de cada cliente.</p>
         </details>
 
         <details class="border rounded p-4 bg-white/10">
@@ -253,27 +374,27 @@
 
         <details class="border rounded p-4 bg-white/10">
           <summary class="font-medium">Quanto custa uma consulta e como funcionam os honorários?</summary>
-          <p class="mt-2">Os valores variam conforme o tipo de serviço (consulta, assessoria, acompanhamento processual ou atuação contenciosa). Oferecemos inicialmente uma avaliação para estimar custos e apresentar proposta de honorários. Para casos complexos, apresentamos um contrato com valores e forma de pagamento.</p>
+          <p class="mt-2">O valor depende do serviço solicitado. Primeiro ouvimos sua necessidade, explicamos o que está incluso e apresentamos uma proposta com formas de pagamento.</p>
         </details>
 
         <details class="border rounded p-4 bg-white/10">
           <summary class="font-medium">Quanto tempo leva um processo trabalhista?</summary>
-          <p class="mt-2">O prazo pode variar muito: alguns processos chegam a resolução em meses, outros podem durar anos, dependendo da complexidade, grau de recurso e agenda do Judiciário. Durante o acompanhamento, informamos estimativas e fases-chave do processo.</p>
+          <p class="mt-2">Cada processo tem um ritmo diferente, de alguns meses a alguns anos. Durante o acompanhamento, informamos estimativas e avisamos quando cada etapa acontecerá.</p>
         </details>
 
         <details class="border rounded p-4 bg-white/10">
           <summary class="font-medium">Vocês fazem atendimento remoto (online)?</summary>
-          <p class="mt-2">Sim. Realizamos consultas e atendimentos iniciais por videoconferência, telefone ou WhatsApp quando o cliente preferir. Documentos também podem ser enviados por e-mail ou por plataformas seguras combinadas com o escritório.</p>
+          <p class="mt-2">Sim. Atendemos por vídeo, telefone ou WhatsApp. Documentos podem ser enviados por e-mail ou pela plataforma que combinarmos.</p>
         </details>
 
         <details class="border rounded p-4 bg-white/10">
           <summary class="font-medium">As informações que envio são mantidas em sigilo?</summary>
-          <p class="mt-2">Sim. Todas as informações e documentos fornecidos ao escritório são tratados com confidencialidade, conforme o dever de sigilo profissional da advocacia. Veja também nossa <a href="privacy.html" class="text-brand hover:underline">Política de Privacidade</a> para mais detalhes.</p>
+          <p class="mt-2">Sim. Todo material enviado fica protegido pelo sigilo profissional da advocacia. Consulte também nossa <a href="privacy.html" class="text-brand hover:underline">Política de Privacidade</a>.</p>
         </details>
 
         <details class="border rounded p-4 bg-white/10">
           <summary class="font-medium">Em quais áreas do Direito do Trabalho vocês atuam?</summary>
-          <p class="mt-2">Atuamos em consultoria preventiva, elaboração e revisão de contratos, reclamações trabalhistas, defesas em ações, acordos extrajudiciais, negociações coletivas e orientações sobre compliance trabalhista. Entre em contato para casos específicos.</p>
+          <p class="mt-2">Prestamos consultoria preventiva, elaboramos e revisamos contratos, atuamos em reclamações e defesas, cuidamos de acordos extrajudiciais e orientamos sobre compliance. Fale conosco para outras demandas.</p>
         </details>
 
       </div>
@@ -282,38 +403,39 @@
 
   <!-- Contact -->
     <!-- Contact -->
-    <section id="contact" class="py-16 bg-brand text-white" data-aos="fade-up">
-      <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-2xl font-semibold text-white text-center">Estamos prontos para ajudar você</h2>
+    <section id="contact" class="py-20 bg-brand text-white" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto px-4 space-y-10">
+        <div class="text-center space-y-3">
+          <span class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.28em] text-white/70 bg-white/10 px-4 py-1.5 rounded-full">Fale com a gente</span>
+          <h2 class="text-3xl font-semibold text-white">Estamos prontos para ajudar você</h2>
+          <p class="text-white/75 max-w-2xl mx-auto">Conte o que está acontecendo, tire dúvidas iniciais e receba uma orientação sem compromisso. Respondemos com linguagem simples e sugestões de próximos passos.</p>
+        </div>
 
-        <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.05fr,0.95fr] gap-10 items-start">
           <div>
-    <!-- Adicione seus IDs do EmailJS nos atributos data abaixo -->
-    <form id="contact-form" class="mt-4 space-y-4 text-white" novalidate
-      data-emailjs-user="YOUR_EMAILJS_USER_ID"
-      data-emailjs-service="YOUR_SERVICE_ID"
-      data-emailjs-template="YOUR_TEMPLATE_ID">
-              <div>
+            <form id="contact-form" class="space-y-4 text-white" novalidate
+              data-emailjs-user="YOUR_EMAILJS_USER_ID"
+              data-emailjs-service="YOUR_SERVICE_ID"
+              data-emailjs-template="YOUR_TEMPLATE_ID">
+              <div class="grid gap-4 sm:grid-cols-2">
                 <label class="sr-only" for="name">Nome</label>
-                <input id="name" name="from_name" required aria-label="Nome" placeholder="Nome" class="w-full bg-white/10 border border-white/20 rounded px-3 py-2 text-white placeholder:text-white/60" />
+                <input id="name" name="from_name" required aria-label="Nome" placeholder="Nome" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60" />
+                <label class="sr-only" for="phone">Telefone</label>
+                <input id="phone" name="phone" type="tel" aria-label="Telefone" placeholder="Telefone" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60" />
               </div>
               <div>
                 <label class="sr-only" for="email">Email</label>
-                <input id="email" name="reply_to" type="email" required aria-label="Email" placeholder="Email" class="w-full bg-white/10 border border-white/20 rounded px-3 py-2 text-white placeholder:text-white/60" />
-              </div>
-              <div>
-                <label class="sr-only" for="phone">Telefone</label>
-                <input id="phone" name="phone" type="tel" aria-label="Telefone" placeholder="Telefone" class="w-full bg-white/10 border border-white/20 rounded px-3 py-2 text-white placeholder:text-white/60" />
+                <input id="email" name="reply_to" type="email" required aria-label="Email" placeholder="Email" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60" />
               </div>
               <div>
                 <label class="sr-only" for="message">Mensagem</label>
-                <textarea id="message" name="message" rows="5" required aria-label="Mensagem" placeholder="Mensagem" class="w-full bg-white/10 border border-white/20 rounded px-3 py-2 text-white placeholder:text-white/60"></textarea>
+                <textarea id="message" name="message" rows="5" required aria-label="Mensagem" placeholder="Conte como podemos apoiar você" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-white/60"></textarea>
               </div>
 
-              <div class="flex items-center gap-3">
-                <button id="send-btn" type="submit" class="inline-flex items-center bg-white text-brand px-5 py-2 rounded font-semibold">
-                  <span id="send-label">Enviar</span>
-                  <svg id="send-spinner" class="hidden animate-spin ml-3 h-5 w-5 text-brand" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+                <button id="send-btn" type="submit" class="inline-flex items-center justify-center gap-3 bg-white text-brand px-7 py-3 rounded-full font-semibold shadow-lg shadow-white/30">
+                  <span id="send-label">Enviar mensagem</span>
+                  <svg id="send-spinner" class="hidden animate-spin h-5 w-5 text-brand" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 11-8 8z"></path>
                   </svg>
@@ -323,19 +445,34 @@
             </form>
           </div>
 
-          <aside class="space-y-4 text-white">
-            <div>
-              <h4 class="font-semibold">Localização</h4>
-              <p class="mt-2">Rua Pedro Gusso, 4127, CIC - Curitiba - PR, 81315-000</p>
-              <div class="mt-4 rounded overflow-hidden">
+          <aside class="space-y-6 text-white">
+            <div class="rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-xl shadow-xl">
+              <h4 class="font-semibold text-lg">Localização</h4>
+              <p class="mt-2 text-white/80">Rua Pedro Gusso, 4127, CIC - Curitiba - PR, 81315-000</p>
+              <div class="mt-4 rounded-2xl overflow-hidden border border-white/10">
                 <iframe id="gmap" src="https://www.google.com/maps?q=Rua+Pedro+Gusso+4127+CIC+Curitiba+PR+81315000&output=embed" width="100%" height="200" style="border:0;filter:grayscale(0.2)brightness(0.9);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
             </div>
 
-            <div>
-              <h4 class="font-semibold">Atendimento</h4>
-              <p class="mt-2">⚖️ Defendemos os direitos dos trabalhadores com transparência, ética e excelência.</p>
-              <p class="mt-2"><strong>Telefone:</strong> (41) 3262-7377</p>
+            <div class="rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur-xl shadow-xl space-y-4">
+              <div>
+                <h4 class="font-semibold text-lg">Atendimento</h4>
+                <p class="mt-2 text-white/80">Atendimento transparente para trabalhadores e empresas, sempre com foco em soluções práticas.</p>
+              </div>
+              <div class="grid gap-3 text-sm text-white/80">
+                <div class="flex items-center gap-3">
+                  <i class="fas fa-phone text-[#f6c85f]"></i>
+                  <span>(41) 3262-7377</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i class="fas fa-clock text-[#f6c85f]"></i>
+                  <span>Segunda a sexta • 9h às 18h</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i class="fas fa-video text-[#f6c85f]"></i>
+                  <span>Consultas presenciais ou online</span>
+                </div>
+              </div>
             </div>
           </aside>
         </div>
@@ -384,7 +521,7 @@
     </footer>
 
   <!-- WhatsApp floating (balão) -->
-  <a id="whatsapp-float" href="#" target="_blank" aria-label="WhatsApp" title="Abrir no WhatsApp"
+  <a id="whatsapp-float" data-wa-link href="#" target="_blank" aria-label="WhatsApp" title="Abrir no WhatsApp"
      class="fixed right-4 bottom-20 bg-[#25D366] text-white p-3 rounded-full shadow-lg flex items-center justify-center hover:scale-105 transform-gpu transition"
      role="button">
     <img src="assets/images/whatsapp.svg" alt="WhatsApp" class="w-10 h-10" aria-hidden="true" />
