@@ -541,21 +541,28 @@
   </button>
 
   <!-- Chatbot widget -->
-   <!--
   <div id="chatbot" data-open="false" aria-live="polite">
-    <button type="button" class="chat-launcher" aria-haspopup="dialog" aria-expanded="false" data-chat-toggle>
+    <button type="button" class="chat-launcher" aria-haspopup="dialog" aria-expanded="false" data-chat-toggle aria-label="Abrir chat com o assistente virtual">
+      <span class="chat-launcher__halo" aria-hidden="true"></span>
       <span class="chat-launcher__icon" aria-hidden="true">
         <svg class="chat-icon" viewBox="0 0 24 24" focusable="false">
           <path d="M5 3h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6.6l-3.72 3.72A1 1 0 0 1 7 19v-3H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm0 2v9h3a1 1 0 0 1 1 1v1.59L12.58 16H19V5z"/>
         </svg>
       </span>
-      <span class="chat-launcher__label">Precisa de ajuda?</span>
+      <span class="chat-launcher__badge" data-chat-badge aria-hidden="true">●</span>
     </button>
+    <div class="chat-launcher__tooltip" data-chat-tooltip>Precisa de ajuda?</div>
 
     <section class="chat-panel" data-chat-panel role="dialog" aria-modal="false" aria-label="Assistente virtual">
       <header class="chat-panel__header">
+        <div class="chat-panel__avatar" aria-hidden="true">
+          <svg class="chat-icon" viewBox="0 0 24 24" focusable="false">
+            <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-3.33 0-10 1.67-10 5v1h20v-1c0-3.33-6.67-5-10-5z" />
+          </svg>
+        </div>
         <div>
-          <p class="chat-panel__title">Assistente virtual</p>
+          <p class="chat-panel__title">Assistente Igor</p>
+          <p class="chat-panel__subtitle">Respostas rápidas sobre serviços e próximos passos</p>
         </div>
         <button type="button" class="chat-close" aria-label="Minimizar atendimento" data-chat-close>
           <svg class="chat-icon" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
@@ -590,7 +597,6 @@
       </div>
     </section>
   </div>
-  -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="assets/js/includes.js"></script>
   <script src="assets/js/chatbot.js"></script>

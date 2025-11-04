@@ -1,109 +1,100 @@
 // Enhanced rule-based chatbot widget with knowledge base responses and quick suggestions
 (function () {
-  const defaultSuggestions = [
-    'Quero agendar uma consulta',
-    'Quais serviços vocês oferecem?',
-    'Documentos necessários',
+  const mainOptions = [
+    'Atendimento',
+    'Áreas Atuantes',
+    'Direitos do Trabalhador',
+    'Documentos Necessários',
+    'Contato'
   ];
 
   const knowledgeBase = [
     {
-      id: 'agendar',
-      labels: ['Quero agendar uma consulta'],
-      triggers: ['agendar', 'agenda', 'consulta', 'marcar', 'horario', 'horário', 'atendimento'],
+      id: 'atendimento',
+      area: 'Atendimento',
+      labels: ['Atendimento', 'Agendar consulta', 'Formato do atendimento', 'Valores e honorários'],
+      triggers: [
+        'atendimento', 'agendar', 'agenda', 'consulta', 'marcar', 'horario', 'horário',
+        'online', 'on-line', 'presencial', 'videoconferencia', 'videoconferência',
+        'honorario', 'honorários', 'valor', 'valores', 'orcamento', 'orçamento',
+        'custo', 'investimento'
+      ],
       response: {
-        text: 'Para agendar, basta compartilhar alguns dados e retornamos com opções de horário.',
-        details: [
-          'Nome completo e telefone ou e-mail para contato.',
-          'Breve resumo do caso ou dúvida principal.',
-          'Preferência de atendimento: presencial na CIC ou on-line.'
+        title: 'Atendimento • Agendar consulta',
+        paragraphs: [
+          'Para agendar uma consulta, informe seu nome completo, telefone ou e-mail e descreva brevemente o assunto para que possamos direcionar o atendimento.',
+          'Os atendimentos podem ser presenciais na Rua Pedro Gusso, 4127, CIC, Curitiba/PR, ou on-line por videoconferência, conforme sua preferência e disponibilidade.',
+          'Antes da confirmação, apresentamos os horários disponíveis, esclarecemos os documentos prévios necessários e encaminhamos a proposta de honorários correspondente.'
         ],
-        suggestions: ['Documentos necessários', 'Valores e honorários', 'Falar pelo WhatsApp']
+        suggestions: mainOptions
       }
     },
     {
-      id: 'servicos',
-      labels: ['Quais serviços vocês oferecem?'],
-      triggers: ['servico', 'serviço', 'servicos', 'serviços', 'atua', 'área', 'areas', 'empresa', 'empresas', 'trabalhador', 'compliance', 'contencioso', 'consultoria'],
+      id: 'areas-atuantes',
+      area: 'Áreas Atuantes',
+      labels: ['Áreas Atuantes', 'Serviços', 'Serviços oferecidos', 'Consultoria trabalhista', 'Compliance trabalhista', 'Contencioso trabalhista'],
+      triggers: [
+        'areas', 'áreas', 'servico', 'servicos', 'serviço', 'serviços', 'atuacao', 'atua', 'atuamos',
+        'consultoria', 'consultivo', 'contencioso', 'compliance', 'programas', 'empresas',
+        'empresarial', 'trabalhista'
+      ],
       response: {
-        text: 'Atuamos em consultoria preventiva, contencioso trabalhista e programas de compliance.',
-        details: [
-          'Consultoria: pareceres rápidos, revisão de contratos e treinamentos para equipes.',
-          'Contencioso: defesas técnicas, audiências, sustentação oral e negociação de acordos.',
-          'Compliance: programas customizados, auditorias internas e políticas voltadas ao trabalho decente.'
+        title: 'Áreas Atuantes • Consultoria, contencioso e compliance',
+        paragraphs: [
+          'No consultivo trabalhista, elaboramos pareceres, revisamos contratos e conduzimos treinamentos para prevenir passivos e fortalecer políticas internas.',
+          'No contencioso, representamos empresas em audiências, defesas técnicas e negociações perante a Justiça do Trabalho, com acompanhamento estratégico de todo o processo.',
+          'Em compliance trabalhista, estruturamos programas personalizados, auditorias e códigos de conduta alinhados ao Pacto Global e às metas de trabalho decente.'
         ],
-        suggestions: ['Quero agendar uma consulta', 'Documentos necessários', 'Sobre o Dr. Igor']
+        suggestions: mainOptions
+      }
+    },
+    {
+      id: 'direitos',
+      area: 'Direitos do Trabalhador',
+      labels: ['Direitos do Trabalhador', 'Direitos trabalhistas', 'Demissões', 'Rescisões', 'Ações judiciais'],
+      triggers: [
+        'direito', 'direitos', 'trabalhador', 'trabalhadores', 'rescisao', 'rescisões', 'demissao', 'demissões',
+        'dispensa', 'justa causa', 'fgts', 'verbas', 'acao', 'ação', 'processo', 'judicial',
+        'reclamacao', 'reclamação', 'indenizacao', 'indenização'
+      ],
+      response: {
+        title: 'Direitos do Trabalhador • Rescisões, demissões e ações',
+        paragraphs: [
+          'Analisamos rescisões para verificar verbas rescisórias, aviso-prévio, multas do FGTS e demais direitos decorrentes da ruptura contratual.',
+          'Em demissões controversas ou dispensas por justa causa, avaliamos provas, orientamos sobre regularização de registros e buscamos soluções consensuais quando possível.',
+          'Para ações judiciais, definimos a estratégia processual, reunimos documentos, estimamos riscos e acompanhamos a execução até o recebimento das verbas devidas.'
+        ],
+        suggestions: mainOptions
       }
     },
     {
       id: 'documentos',
-      labels: ['Documentos necessários'],
-      triggers: ['documento', 'documentos', 'docs', 'levar', 'papel'],
+      area: 'Documentos Necessários',
+      labels: ['Documentos Necessários', 'Lista de documentos', 'Documentos para consulta'],
+      triggers: ['documento', 'documentos', 'docs', 'papelada', 'comprovantes', 'checklist', 'lista', 'arquivos', 'anexos', 'comprovante'],
       response: {
-        text: 'Os documentos abaixo ajudam a avançar rapidamente na análise da situação:',
-        details: [
-          'Carteira de trabalho, contrato ou aditivos relevantes.',
-          'Contracheques, recibos e comprovantes de pagamento.',
-          'Termo de rescisão, comunicações internas ou registros importantes.',
-          'Documentos pessoais e comprovante de residência.'
+        title: 'Documentos Necessários • Checklist por tipo de atendimento',
+        paragraphs: [
+          'Para consultas iniciais, reúna dados pessoais, contratos de trabalho, aditivos e políticas internas relevantes para contextualizar o atendimento.',
+          'Em análises de rescisão ou demissão, solicitamos holerites, Termo de Rescisão do Contrato de Trabalho, extratos do FGTS, comunicações internas e comprovantes de pagamento.',
+          'Para ações ou defesas judiciais, precisamos dos registros de jornada, comunicações eletrônicas, testemunhas disponíveis e qualquer documentação complementar relacionada ao caso.'
         ],
-        suggestions: ['Quero agendar uma consulta', 'Valores e honorários']
-      }
-    },
-    {
-      id: 'honorarios',
-      labels: ['Valores e honorários'],
-      triggers: ['honor', 'valor', 'valores', 'preco', 'preço', 'custo', 'quanto'],
-      response: {
-        text: 'Os honorários variam conforme o tipo de atuação e a complexidade do caso.',
-        details: [
-          'Após entender a demanda, enviamos proposta com etapas, escopo e formas de pagamento.',
-          'Em ações judiciais, combinamos condições antes de protocolar.',
-          'Você pode iniciar um orçamento enviando mensagem pelo formulário ou WhatsApp.'
-        ],
-        suggestions: ['Quero agendar uma consulta', 'Falar pelo WhatsApp']
-      }
-    },
-    {
-      id: 'sobre',
-      labels: ['Sobre o Dr. Igor'],
-      triggers: ['igor', 'advogado', 'curriculo', 'currículo', 'experiencia', 'experiência', 'quem e', 'quem é'],
-      response: {
-        text: 'O escritório é conduzido pelo advogado Igor Santana, especializado em Direito do Trabalho.',
-        details: [
-          'Relator da Comissão do Pacto Global e Sustentabilidade da OAB/PR, com foco em trabalho decente.',
-          'Autor de pesquisa sobre trabalhador eventual e contrato intermitente publicada pelo TRT/PR.',
-          'Participou do PVIC/2024 com estudo sobre o trabalho de motoristas de aplicativo e o PL 12/2024.'
-        ],
-        suggestions: ['Quais serviços vocês oferecem?', 'Quero agendar uma consulta']
-      }
-    },
-    {
-      id: 'localizacao',
-      labels: ['Onde ficam?'],
-      triggers: ['onde', 'endereco', 'endereço', 'local', 'localizacao', 'localização', 'ficam', 'mapa'],
-      response: {
-        text: 'O escritório fica na Rua Pedro Gusso, 4127, CIC - Curitiba - PR.',
-        details: [
-          'Atendemos presencialmente e também por videoconferência.',
-          'Horário: segunda a sexta, das 9h às 18h.',
-          'Clique em “Continuar no WhatsApp” para receber a localização completa.'
-        ],
-        suggestions: ['Quero agendar uma consulta', 'Falar pelo WhatsApp']
+        suggestions: mainOptions
       }
     },
     {
       id: 'contato',
-      labels: ['Falar pelo WhatsApp'],
-      triggers: ['whatsapp', 'telefone', 'contato', 'ligar', 'falar'],
+      area: 'Contato',
+      labels: ['Contato', 'WhatsApp', 'Telefone', 'Formulário'],
+      triggers: ['contato', 'whatsapp', 'telefone', 'ligar', 'mensagem', 'falar', 'retorno', 'formulario', 'formulário', 'email', 'e-mail'],
       response: {
-        text: 'Podemos continuar a conversa pelo WhatsApp quando preferir.',
-        details: [
-          'O botão abaixo abre o WhatsApp com uma mensagem inicial.',
-          'Estamos disponíveis em horário comercial.',
-          'Se preferir, deixe seu número que retornamos.'
+        title: 'Contato • Canais de continuidade',
+        paragraphs: [
+          'Você pode continuar o atendimento imediatamente pelo WhatsApp oficial do escritório; acione o botão e enviaremos uma mensagem inicial para facilitar.',
+          'Caso prefira ligação telefônica, informe o melhor número e período para retorno que nossa equipe realizará o contato.',
+          'O formulário do site permanece disponível para envio de dados, anexos e atualização do andamento, garantindo o registro seguro da sua demanda.'
         ],
-        suggestions: ['Quero agendar uma consulta', 'Valores e honorários']
+        suggestions: mainOptions
       }
     }
   ];
@@ -159,6 +150,17 @@
       lastTopic: null
     };
 
+    function formatPhoneNumber(digits = '') {
+      if (!digits) return '';
+      if (digits.length === 11) {
+        return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+      }
+      if (digits.length === 10) {
+        return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+      }
+      return digits;
+    }
+
     function setOpen(open) {
       root.dataset.open = open ? 'true' : 'false';
       if (!open) root.dataset.unread = 'false';
@@ -175,7 +177,7 @@
     }
 
     toggle.addEventListener('click', () => {
-  const willOpen = root.dataset.open !== 'true';
+      const willOpen = root.dataset.open !== 'true';
       setOpen(willOpen);
     });
 
@@ -196,16 +198,37 @@
       input.value = '';
     });
 
-    function createMessageElement(from, text, details) {
+    function createMessageElement(from, payload = {}) {
       const wrapper = document.createElement('div');
       wrapper.className = `chat-message chat-message--${from}`;
 
       const bubble = document.createElement('div');
       bubble.className = 'chat-message__bubble';
 
-      const paragraph = document.createElement('p');
-      paragraph.textContent = text;
-      bubble.appendChild(paragraph);
+      const { title, text, paragraphs, details } = payload;
+
+      if (title) {
+        const heading = document.createElement('div');
+        heading.className = 'chat-message__title';
+        heading.textContent = title;
+        heading.style.fontWeight = '700';
+        heading.style.marginBottom = '0.4rem';
+        bubble.appendChild(heading);
+      }
+
+      const segments = [];
+      if (text) segments.push(text);
+      if (Array.isArray(paragraphs) && paragraphs.length) {
+        paragraphs.forEach(segment => {
+          if (segment) segments.push(segment);
+        });
+      }
+
+      segments.forEach(content => {
+        const paragraphEl = document.createElement('p');
+        paragraphEl.textContent = content;
+        bubble.appendChild(paragraphEl);
+      });
 
       if (Array.isArray(details) && details.length) {
         const list = document.createElement('ul');
@@ -227,10 +250,10 @@
       return wrapper;
     }
 
-    function addMessage(from, payload) {
+    function addMessage(from, payload = {}) {
       if (!messages) return;
-      const { text, details, suggestions: customSuggestions } = payload;
-      messages.appendChild(createMessageElement(from, text, details));
+      const { suggestions: customSuggestions } = payload;
+      messages.appendChild(createMessageElement(from, payload));
       messages.scrollTo({ top: messages.scrollHeight, behavior: 'smooth' });
       updateSuggestions(customSuggestions || null);
       if (from === 'bot' && root.dataset.open !== 'true') {
@@ -241,8 +264,10 @@
     function updateSuggestions(items) {
       if (!suggestions) return;
       suggestions.innerHTML = '';
-      const entries = items && items.length ? items : defaultSuggestions;
-      entries.forEach(label => {
+      const pool = items && items.length ? items : mainOptions;
+      const entries = Array.from(new Set(pool.filter(label => mainOptions.includes(label))));
+      const finalEntries = entries.length ? entries : mainOptions;
+      finalEntries.forEach(label => {
         const button = document.createElement('button');
         button.type = 'button';
         button.className = 'chat-suggestion';
@@ -254,16 +279,27 @@
 
     function botGreet() {
       addMessage('bot', {
-        text: 'Olá! Sou o assistente virtual do Igor Santana Advocacia. Posso ajudar com serviços, agenda, documentos ou contato imediato.',
-        suggestions: defaultSuggestions
+        title: 'Bem-vindo • Assistente virtual',
+        paragraphs: [
+          'Sou o assistente virtual do Igor Santana Advocacia e posso orientar sobre atendimento, áreas de atuação, direitos trabalhistas, documentos necessários e canais de contato.',
+          'Escolha um dos temas principais abaixo ou descreva sua necessidade para avançarmos com a orientação adequada.'
+        ],
+        suggestions: mainOptions
       });
     }
 
-    function acknowledgeContact(info) {
+    function acknowledgeContact(contact) {
+      if (!contact) return;
+      const descriptor = contact.type === 'email'
+        ? `E-mail informado: ${contact.value}`
+        : `Telefone informado: ${contact.value}`;
       addMessage('bot', {
-        text: 'Obrigado pelas informações. Nossa equipe vai retornar em breve com os próximos passos.',
-        details: [info],
-        suggestions: ['Quero agendar uma consulta', 'Falar pelo WhatsApp']
+        title: 'Contato • Dados recebidos',
+        paragraphs: [
+          'Agradeço o envio das informações. Nossa equipe analisará os dados e retornará com os próximos passos do atendimento.',
+          descriptor
+        ],
+        suggestions: mainOptions
       });
     }
 
@@ -279,23 +315,32 @@
       const hasPhone = phoneDigits.length >= 10;
 
       if (mailMatch || hasPhone) {
-        const info = mailMatch ? `Email recebido: ${mailMatch[0]}` : `Telefone recebido: ${phoneDigits}`;
+        const info = mailMatch
+          ? { type: 'email', value: mailMatch[0] }
+          : { type: 'phone', value: formatPhoneNumber(phoneDigits) };
         acknowledgeContact(info);
         return;
       }
 
       if (gratitudeWords.some(word => normalized.includes(word))) {
         addMessage('bot', {
-          text: 'Fico feliz em ajudar! Se precisar de algo a mais, é só me chamar.',
-          suggestions: ['Quero agendar uma consulta', 'Falar pelo WhatsApp']
+          title: 'Assistente • À disposição',
+          paragraphs: [
+            'Permaneço à disposição para esclarecer outras dúvidas ou direcionar novas etapas do atendimento.',
+            'Selecione um dos temas principais abaixo sempre que desejar continuar a conversa.'
+          ],
+          suggestions: mainOptions
         });
         return;
       }
 
       if (farewellWords.some(word => normalized.includes(word))) {
         addMessage('bot', {
-          text: 'Até breve! Quando quiser retomar o atendimento, estarei por aqui.',
-          suggestions: ['Quero agendar uma consulta', 'Falar pelo WhatsApp']
+          title: 'Assistente • Atendimento encerrado',
+          paragraphs: [
+            'Agradeço o contato. Quando quiser retomar a conversa, basta acionar o ícone do assistente no canto inferior da tela.'
+          ],
+          suggestions: mainOptions
         });
         return;
       }
@@ -307,13 +352,21 @@
         addMessage('bot', topic.response);
       } else if (!fromSuggestion && state.lastTopic) {
         addMessage('bot', {
-          text: 'Posso detalhar mais algum ponto? Tenho informações sobre agenda, honorários, documentos e canais de contato.',
-          suggestions: defaultSuggestions
+          title: 'Assistente • Temas disponíveis',
+          paragraphs: [
+            'Ainda tenho informações organizadas sobre atendimento, áreas atuantes, direitos do trabalhador, documentos necessários e formas de contato.',
+            'Escolha um dos tópicos abaixo ou descreva novamente com mais detalhes para que eu possa ajudar.'
+          ],
+          suggestions: mainOptions
         });
       } else {
         addMessage('bot', {
-          text: 'Ainda não tenho essa informação, mas posso ajudar com serviços, agenda, documentos ou encaminhar para atendimento humano.',
-          suggestions: defaultSuggestions
+          title: 'Assistente • Não localizei essa informação',
+          paragraphs: [
+            'No momento não identifiquei a resposta para essa solicitação na base de conhecimento.',
+            'Selecione um dos temas principais abaixo ou reformule a pergunta com detalhes específicos.'
+          ],
+          suggestions: mainOptions
         });
       }
     }
@@ -328,14 +381,18 @@
       }) || null;
     }
 
-    updateSuggestions(defaultSuggestions);
+    updateSuggestions(mainOptions);
 
     if (whatsappBtn) {
       whatsappBtn.setAttribute('data-chat-whatsapp', '');
       whatsappBtn.addEventListener('click', () => {
         addMessage('bot', {
-          text: 'Abrindo o WhatsApp. Se preferir, deixe seu contato por aqui que retornamos também!',
-          suggestions: ['Quero agendar uma consulta', 'Valores e honorários']
+          title: 'Contato • Abrindo WhatsApp',
+          paragraphs: [
+            'Abrirei o WhatsApp do escritório para que possamos prosseguir com um atendimento em tempo real.',
+            'Se preferir, informe aqui o número ou o melhor horário para retorno e manteremos o acompanhamento diretamente pela equipe.'
+          ],
+          suggestions: mainOptions
         });
       });
     }
