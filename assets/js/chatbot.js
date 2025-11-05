@@ -282,7 +282,7 @@
         title: 'Bem-vindo • Assistente virtual',
         paragraphs: [
           'Sou o assistente virtual do Igor Santana Advocacia e posso orientar sobre atendimento, áreas de atuação, direitos trabalhistas, documentos necessários e canais de contato.',
-          'Escolha um dos temas principais abaixo ou descreva sua necessidade para avançarmos com a orientação adequada.'
+          'Escolha um dos temas abaixo ou descreva sua necessidade para avançarmos com a orientação adequada.'
         ],
         suggestions: mainOptions
       });
@@ -397,9 +397,6 @@
       });
     }
 
-    // Open chat automatically on desktop after delay to highlight availability
-    if (window.matchMedia('(min-width: 768px)').matches) {
-      setTimeout(() => { if (!state.openedOnce) setOpen(true); }, 2500);
-    }
+    // Remove auto-open: chat should only expand when the user clicks the launcher.
   }
 })();
